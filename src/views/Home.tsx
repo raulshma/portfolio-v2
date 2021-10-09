@@ -9,6 +9,7 @@ import {
   Section,
   SectionTitle,
   SectionHeader,
+  ContentWrapper,
 } from '../components'
 
 export interface ProjectsResponse {
@@ -75,21 +76,6 @@ export function Home(): ReactElement {
                 </MCardButtons>
               </MCard>
             ))}
-
-          {/* <MCard>
-            <MCardSpan>BT</MCardSpan>
-            <MCardSubText>Bitcoin price tracker</MCardSubText>
-            <MCardButtons>
-              <Button variant={'status'}>Preview</Button>
-            </MCardButtons>
-          </MCard>
-          <MCard>
-            <MCardSpan>BT</MCardSpan>
-            <MCardSubText>Bitcoin price tracker</MCardSubText>
-            <MCardButtons>
-              <Button variant={'status'}>Preview</Button>
-            </MCardButtons>
-          </MCard> */}
         </CardsWrapper>
       </Section>
     </React.Fragment>

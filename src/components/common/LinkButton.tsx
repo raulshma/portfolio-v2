@@ -34,7 +34,7 @@ export const LinkButton = styled.a`
     ${(props: ButtonProps) =>
       props.variant === 'primary'
         ? `background:${BTN_PRIMARY_HOVER};`
-        : 'background: #1e59f1;'}
+        : 'background: rgb(22, 74, 201);'}
   }
   & + & {
     margin-left: 1em;

@@ -45,6 +45,7 @@ export const MCardSubText = styled.div`
   font-size: 14px;
   font-weight: 400;
   line-height: 1.6em;
+  word-break: break-all;
   margin-top: 20px;
   border-bottom: 1px solid rgba(113 119 144 / 25%);
   padding-bottom: 20px;
