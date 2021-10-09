@@ -5,23 +5,40 @@ import {
   MCardSpan,
   MCardSubText,
   MCardButtons,
-  Button,
+  LinkButton,
   Section,
   SectionTitle,
   SectionHeader,
 } from '../components'
 
+export interface ProjectsResponse {
+  projects: Project[]
+}
+
+export interface Project {
+  name: string
+  description: string
+  repo: string
+  frameworks: string[]
+  preview: Preview
+}
+
+export interface Preview {
+  hasPreview: boolean
+  url: string
+}
+
 export function Home(): ReactElement {
-  const [data, setData] = useState<any>(null)
+  const [projects, setProjects] = useState<Project[]>([])
 
   useEffect(() => {
     fetch(
-      'https://gist.githubusercontent.com/raulshma/1b46ef66763769719144c00ba2bab493/raw/8793009848dedbebc1ae0fdec8bb87cf9479c95c/gistfile1.txt'
+      'https://gist.githubusercontent.com/raulshma/1b46ef66763769719144c00ba2bab493/raw'
     )
-      .then((response) => response.text())
-      .then((data) => {
-        console.log(data)
-        setData(JSON.parse(data))
+      .then((response: Response) => response.text())
+      .then((data: string) => {
+        const response: ProjectsResponse = JSON.parse(data)
+        setProjects(response.projects)
       })
   }, [])
 
@@ -31,13 +48,30 @@ export function Home(): ReactElement {
       <Section>
         <SectionTitle>Projects</SectionTitle>
         <CardsWrapper>
-          {data &&
-            data.projects.map((item: any, key: any) => (
-              <MCard key={key}>
+          {projects.length > 0 &&
+            projects.map((item: Project) => (
+              <MCard key={item.name}>
                 <MCardSpan>{item.name}</MCardSpan>
-                <MCardSubText>Bitcoin price tracker</MCardSubText>
+                <MCardSubText>{item.description}</MCardSubText>
                 <MCardButtons>
-                  <Button variant={'status'}>Preview</Button>
+                  <LinkButton
+                    href={item.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant={'primary'}
+                  >
+                    Github
+                  </LinkButton>
+                  {item.preview.hasPreview && (
+                    <LinkButton
+                      href={item.preview.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant={'status'}
+                    >
+                      Preview
+                    </LinkButton>
+                  )}
                 </MCardButtons>
               </MCard>
             ))}

@@ -1,5 +1,5 @@
 export { MCard, MCardSpan, MCardSubText, MCardButtons } from './common/Card'
 export { Wrapper, CardsWrapper } from './common/Wrapper'
-export { Button } from './common/Button'
+export { LinkButton } from './common/LinkButton'
 export { Container } from './common/Container'
 export { Section, SectionTitle, SectionHeader } from './common/Section'

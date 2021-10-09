@@ -25,11 +25,9 @@ export const MCard = styled.div`
   & + & {
     margin-left: 20px;
   }
-
   @media only screen and (max-width: 1110px) {
     width: calc(50% - 20px);
     margin-top: 20px;
-    margin-left: 0px;
     &:last-child {
       margin-left: 0px;
     }

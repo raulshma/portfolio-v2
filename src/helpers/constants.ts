@@ -6,3 +6,5 @@ export const BG_DARK = BORDER_DARK;
 export const HOVER_BG_COLOR = 'rgba(16 18 27 / 55%)';
 export const TEXT_WHITE = BORDER_WHITE;
 export const TEXT_GREY = '#999ba5';
+export const BTN_PRIMARY = 'rgb(53, 53, 53)';
+export const BTN_PRIMARY_HOVER = 'rgb(0, 0, 0)';
