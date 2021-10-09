@@ -3,24 +3,25 @@ import {
   BG_LIGHT,
   BORDER_DARK,
   HOVER_BG_COLOR,
+  MODE,
   TEXT_WHITE,
 } from '../../helpers/constants'
 
 export const MCard = styled.div`
-  color: ${TEXT_WHITE};
+  color: ${TEXT_WHITE(MODE)};
   display: flex;
   flex-direction: column;
   width: calc(33.3% - 20px);
   font-size: 16px;
-  background-color: ${BG_LIGHT};
+  background-color: ${BG_LIGHT(MODE)};
   border-radius: 14px;
-  border: 1px solid ${BORDER_DARK};
+  border: 1px solid ${BORDER_DARK(MODE)};
   padding: 20px;
   cursor: pointer;
   transition: 0.3s ease;
   &:hover {
     transform: scale(1.02);
-    background-color: ${HOVER_BG_COLOR};
+    background-color: ${HOVER_BG_COLOR(MODE)};
   }
   @media only screen and (max-width: 1110px) {
     width: calc(50% - 20px);

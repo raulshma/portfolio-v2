@@ -1,15 +1,15 @@
 import React, { ReactElement } from 'react'
 import styled from 'styled-components'
-import { BG_DARK, BORDER_LIGHT, BORDER_WHITE } from '../helpers/constants'
+import { BG_DARK, BORDER_LIGHT, BORDER_WHITE, MODE } from '../helpers/constants'
 
 const Head = styled.div`
-  background-color: ${BG_DARK};
+  // background-color: ${BG_DARK(MODE)};
   display: flex;
   align-items: center;
   flex-shrink: 0;
   height: 58px;
   width: 100%;
-  border-bottom: 1px solid ${BORDER_LIGHT};
+  border-bottom: 1px solid ${BORDER_LIGHT(MODE)};
   padding: 0 30px;
   white-space: nowrap;
 `
@@ -36,7 +36,7 @@ const ProfileImage = styled.img`
   border-radius: 35%;
   -o-object-fit: cover;
   object-fit: cover;
-  border: 2px solid ${BORDER_WHITE};
+  border: 2px solid ${BORDER_WHITE(MODE)};
   margin-left: 22px;
 `
 

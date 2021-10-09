@@ -35,7 +35,7 @@ code {
     monospace;
 }
 
-#root {
+.root {
   background-color: rgba(16 18 27 / 40%);
   max-width: 1250px;
   max-height: 860px;
