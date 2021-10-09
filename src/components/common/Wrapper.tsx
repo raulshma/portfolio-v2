@@ -15,5 +15,6 @@ export const CardsWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  gap: 20px;
   width: calc(100% + 20px);
 `

@@ -22,22 +22,11 @@ export const MCard = styled.div`
     transform: scale(1.02);
     background-color: ${HOVER_BG_COLOR};
   }
-  & + & {
-    margin-left: 20px;
-  }
   @media only screen and (max-width: 1110px) {
     width: calc(50% - 20px);
-    margin-top: 20px;
-    &:last-child {
-      margin-left: 0px;
-    }
   }
   @media only screen and (max-width: 565px) {
-    & + & {
-      margin-left: 0px;
-    }
     width: calc(100% - 20px);
-    margin-top: 20px;
   }
 `
 
