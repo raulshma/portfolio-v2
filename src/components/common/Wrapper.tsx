@@ -1,24 +1,23 @@
 import styled from 'styled-components'
-import { BG_DARK, MODE, TEXT_WHITE } from '../../helpers/constants'
 
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  color: ${TEXT_WHITE(MODE)};
+  color: var(--theme-color);
   padding: 20px 40px;
   height: 100%;
   overflow: hidden;
-  background-color: ${BG_DARK(MODE)};
+  background-color: var(--theme-bg-color);
 }`
 
 export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  color: ${TEXT_WHITE('light')};
+  color: var(--theme-color);
   padding: 20px 40px;
   height: 100%;
   overflow: auto;
-  background-color: ${BG_DARK(MODE)};
+  background-color: var(--theme-bg-color);
 `
 
 export const CardsWrapper = styled.div`

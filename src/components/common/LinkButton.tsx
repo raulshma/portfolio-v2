@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { BTN_PRIMARY, BTN_PRIMARY_HOVER } from '../../helpers/constants'
 
 export interface ButtonProps {
   variant?: 'status' | 'primary'
@@ -13,7 +12,7 @@ export const LinkButton = styled.a`
       : ''}
   ${(props: ButtonProps) =>
     props.variant === 'primary'
-      ? `background-color:${BTN_PRIMARY};`
+      ? `background-color: rgb(53, 53, 53);`
       : 'background-color: #3a6df0;'}
   
   border: none;
@@ -33,16 +32,22 @@ export const LinkButton = styled.a`
   &:hover {
     ${(props: ButtonProps) =>
       props.variant === 'primary'
-        ? `background:${BTN_PRIMARY_HOVER};`
+        ? `background: rgb(0, 0, 0);`
         : 'background: rgb(22, 74, 201);'}
   }
   & + & {
     margin-left: 1em;
   }
+  @media only screen and (max-width: 1250px) {
+    padding: 4px 14px;
+  }
   @media only screen and (max-width: 1110px) {
-    padding: 4px 16px;
+    padding: 3px 12px;
+  }
+  @media only screen and (max-width: 900px) {
+    padding: 2px 10px;
   }
   @media only screen and (max-width: 565px) {
-    padding: 3px 12px;
+    padding: 2px 8px;
   }
 `

@@ -9,7 +9,6 @@ import {
   Section,
   SectionTitle,
   SectionHeader,
-  ContentWrapper,
 } from '../components'
 
 export interface ProjectsResponse {
@@ -45,39 +44,41 @@ export function Home(): ReactElement {
 
   return (
     <React.Fragment>
-      <SectionHeader />
-      <Section>
-        <SectionTitle>Projects</SectionTitle>
-        <CardsWrapper>
-          {projects.length > 0 &&
-            projects.map((item: Project) => (
-              <MCard key={item.name}>
-                <MCardSpan>{item.name}</MCardSpan>
-                <MCardSubText>{item.description}</MCardSubText>
-                <MCardButtons>
-                  <LinkButton
-                    href={item.repo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    variant={'primary'}
-                  >
-                    Github
-                  </LinkButton>
-                  {item.preview.hasPreview && (
+      <div className="info">
+        <SectionHeader />
+        <Section>
+          <SectionTitle>Projects</SectionTitle>
+          <CardsWrapper>
+            {projects.length > 0 &&
+              projects.map((item: Project) => (
+                <MCard key={item.name}>
+                  <MCardSpan>{item.name}</MCardSpan>
+                  <MCardSubText>{item.description}</MCardSubText>
+                  <MCardButtons>
                     <LinkButton
-                      href={item.preview.url}
+                      href={item.repo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      variant={'status'}
+                      variant={'primary'}
                     >
-                      Preview
+                      Github
                     </LinkButton>
-                  )}
-                </MCardButtons>
-              </MCard>
-            ))}
-        </CardsWrapper>
-      </Section>
+                    {item.preview.hasPreview && (
+                      <LinkButton
+                        href={item.preview.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        variant={'status'}
+                      >
+                        Preview
+                      </LinkButton>
+                    )}
+                  </MCardButtons>
+                </MCard>
+              ))}
+          </CardsWrapper>
+        </Section>
+      </div>
     </React.Fragment>
   )
 }

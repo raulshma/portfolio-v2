@@ -1,24 +1,19 @@
-import React, { ReactElement } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Container, ContentWrapper } from './components'
+import React, { ReactElement, useState } from 'react'
+import { Container, ContentWrapper, ThemeSwitch } from './components'
 import Header from './components/Header'
+import { Info } from './views'
 import { Home } from './views/Home'
 
 function App(): ReactElement {
+  const [activeTab, setActiveTab] = useState<'Info' | 'Projects'>('Info')
   return (
-    <Router>
-      <Container>
-        <Header />
-        <ContentWrapper>
-          <Switch>
-            <Route path="/about"></Route>
-            <Route path="*">
-              <Home />
-            </Route>
-          </Switch>
-        </ContentWrapper>
-      </Container>
-    </Router>
+    <Container>
+      <ThemeSwitch />
+      <Header active={activeTab} setActive={setActiveTab} />
+      <ContentWrapper>
+        {activeTab === 'Info' ? <Info /> : <Home />}
+      </ContentWrapper>
+    </Container>
   )
 }
 

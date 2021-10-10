@@ -1,8 +1,7 @@
 import styled from 'styled-components'
-import { TEXT_GREY } from '../../helpers/constants'
 
 export const SectionTitle = styled.div`
-  color: ${TEXT_GREY};
+  color: var(--content-title-color);
   margin-bottom: 14px;
 `
 export const SectionHeader = styled.div`
